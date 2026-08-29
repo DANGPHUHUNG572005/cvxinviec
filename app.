@@ -170,7 +170,7 @@ col1, col2 = st.columns([1, 2.2], gap="large")
 with col1:
 
     st.image(
-        "cv_photo.jpeg",
+        "cv_photo.jpg",
         width=300
     )
 
