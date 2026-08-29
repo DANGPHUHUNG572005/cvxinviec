@@ -5,683 +5,428 @@ import streamlit as st
 # =========================================================
 
 st.set_page_config(
-    page_title="CV - Đặng Phú Hưng",
-    page_icon="📄",
-    layout="wide",
-    initial_sidebar_state="collapsed"
+    page_title="CV - Trần Diệu Linh",
+    page_icon="👩‍💼",
+    layout="wide"
 )
 
 # =========================================================
-# CSS - THIẾT KẾ GIAO DIỆN CV
+# CSS
 # =========================================================
 
 st.markdown("""
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-html, body, [class*="css"] {
-    font-family: 'Inter', sans-serif;
-}
-
-.stApp {
-    background: #f3f4f6;
-}
-
-/* Ẩn menu Streamlit */
-#MainMenu {
-    visibility: hidden;
-}
-
-footer {
-    visibility: hidden;
-}
-
-header {
-    visibility: hidden;
-}
-
-/* Khung CV chính */
-.cv-container {
-    max-width: 1100px;
-    margin: 30px auto;
-    background: white;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.10);
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-/* Header */
-.cv-header {
-    background: linear-gradient(135deg, #17365d, #1f4e79);
-    color: white;
-    padding: 42px 50px;
-}
-
-.cv-name {
-    font-size: 38px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-}
-
-.cv-position {
-    font-size: 17px;
-    font-weight: 500;
-    opacity: 0.95;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Thông tin cá nhân */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 30px;
-    margin-top: 25px;
-}
-
-.contact-item {
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.contact-label {
-    font-weight: 700;
-    margin-right: 5px;
-}
-
-/* Nội dung */
-.cv-body {
-    display: grid;
-    grid-template-columns: 34% 66%;
-}
-
-/* Cột trái */
-.left-column {
-    background: #f7f9fc;
-    padding: 35px 30px;
-    border-right: 1px solid #e4e7eb;
-}
-
-/* Cột phải */
-.right-column {
-    padding: 35px 40px;
-}
-
-/* Section */
-.section {
-    margin-bottom: 32px;
-}
-
-.section-title {
-    color: #17365d;
-    font-size: 17px;
-    font-weight: 800;
-    text-transform: uppercase;
-    border-bottom: 2px solid #17365d;
-    padding-bottom: 8px;
-    margin-bottom: 17px;
-    letter-spacing: 0.5px;
-}
-
-/* Text */
-.text {
-    color: #333;
-    font-size: 14px;
-    line-height: 1.75;
-    text-align: justify;
-}
-
-.bold {
-    font-weight: 700;
-}
-
-/* Skill */
-.skill {
-    margin-bottom: 17px;
-}
-
-.skill-name {
-    font-size: 13px;
-    font-weight: 800;
-    color: #17365d;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-}
-
-.skill-description {
-    font-size: 13px;
-    color: #444;
-    line-height: 1.6;
-}
-
-/* Sở thích */
-.hobby {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    margin: 9px 0;
-    font-size: 13px;
-    color: #444;
-}
-
-.hobby-dot {
-    width: 7px;
-    height: 7px;
-    background: #17365d;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-/* Education */
-.timeline-item {
-    margin-bottom: 23px;
-    position: relative;
-}
-
-.date {
-    color: #1f4e79;
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.organization {
-    color: #222;
-    font-size: 15px;
-    font-weight: 800;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-}
-
-.position {
-    color: #555;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 7px;
-}
-
-.detail {
-    color: #444;
-    font-size: 13.5px;
-    line-height: 1.7;
-}
-
-.detail ul {
-    margin-top: 5px;
-    padding-left: 20px;
-}
-
-.detail li {
-    margin-bottom: 5px;
-}
-
-/* Certificate cards */
-.certificate {
-    background: white;
-    border-left: 4px solid #1f4e79;
-    padding: 12px 14px;
-    margin-bottom: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.certificate-year {
-    color: #1f4e79;
-    font-size: 12px;
-    font-weight: 800;
-}
-
-.certificate-name {
-    color: #333;
-    font-size: 13px;
-    font-weight: 700;
-    margin-top: 3px;
-}
-
-/* Footer */
-.cv-footer {
-    text-align: center;
-    padding: 16px;
-    background: #17365d;
-    color: white;
-    font-size: 12px;
-}
-
-/* Responsive */
-@media (max-width: 800px) {
-
-    .cv-container {
-        margin: 10px;
+    /* Toàn bộ trang */
+    .stApp {
+        background-color: white;
     }
 
-    .cv-header {
-        padding: 30px 25px;
+    .main {
+        padding-top: 20px;
     }
 
-    .cv-name {
-        font-size: 30px;
+    /* Font */
+    html, body, [class*="css"] {
+        font-family: Arial, sans-serif;
     }
 
-    .contact-grid {
-        grid-template-columns: 1fr;
+    /* Tên */
+    .name {
+        font-size: 38px;
+        font-weight: bold;
+        color: #c6283d;
+        margin-bottom: 5px;
     }
 
-    .cv-body {
-        grid-template-columns: 1fr;
+    /* Chức danh */
+    .job {
+        font-size: 22px;
+        color: #222222;
+        margin-bottom: 15px;
     }
 
-    .left-column {
-        border-right: none;
-        border-bottom: 1px solid #e4e7eb;
+    /* Giới thiệu */
+    .intro {
+        font-size: 16px;
+        line-height: 1.6;
+        text-align: justify;
+        color: #222222;
     }
 
-    .right-column {
-        padding: 30px 25px;
+    /* Tiêu đề section */
+    .section-title {
+        font-size: 21px;
+        font-weight: bold;
+        color: #111111;
+        border-top: 3px solid #c6283d;
+        border-bottom: 3px solid #c6283d;
+        padding: 7px 5px;
+        margin-top: 20px;
+        margin-bottom: 15px;
     }
-}
+
+    /* Nội dung */
+    .content {
+        font-size: 16px;
+        line-height: 1.55;
+        color: #222222;
+    }
+
+    /* Tên trường / công ty */
+    .bold {
+        font-weight: bold;
+    }
+
+    /* Kinh nghiệm */
+    .experience-date {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .company {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    /* Bullet */
+    .bullet {
+        margin-left: 15px;
+        line-height: 1.5;
+        font-size: 15px;
+    }
+
+    /* Kỹ năng */
+    .skill-title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 12px;
+    }
+
+    .skill-content {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    /* Thông tin cá nhân */
+    .info-row {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .icon {
+        color: #c6283d;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    /* Ảnh */
+    .profile-img {
+        width: 100%;
+        max-width: 300px;
+        border: 1px solid #dddddd;
+    }
+
+    /* Timeline */
+    .timeline {
+        border-left: 3px solid #777777;
+        margin-left: 10px;
+        padding-left: 25px;
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+        background-color: #c6283d;
+        border-radius: 50%;
+        position: absolute;
+        margin-left: -33px;
+        margin-top: 5px;
+    }
+
+    /* Ẩn menu Streamlit */
+    #MainMenu {
+        visibility: hidden;
+    }
+
+    footer {
+        visibility: hidden;
+    }
+
+    header {
+        visibility: hidden;
+    }
 
 </style>
 """, unsafe_allow_html=True)
 
 
 # =========================================================
-# HEADER
+# PHẦN 1: ẢNH + THÔNG TIN GIỚI THIỆU
 # =========================================================
 
-st.markdown("""
-<div class="cv-container">
+col1, col2 = st.columns([1, 2.2], gap="large")
 
-    <div class="cv-header">
+with col1:
 
-        <div class="cv-name">
-            ĐẶNG PHÚ HƯNG
+    st.image(
+        "photo.jpg",
+        width=300
+    )
+
+with col2:
+
+    st.markdown(
+        '<div class="name">TRẦN DIỆU LINH</div>',
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        '<div class="job">Nhân viên tín dụng</div>',
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        '<hr style="border: 1px solid #222222;">',
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        """
+        <div class="intro">
+        Hiện tôi là sinh viên năm 3 Trường Đại học Nguyễn Tất Thành.
+        Trong hơn hai năm học tập và đồng hành cùng các thầy cô giảng viên,
+        tôi đã được trang bị những kiến thức nền tảng về lĩnh vực ngân hàng,
+        tài chính cùng các kỹ năng cơ bản như giao tiếp, làm việc nhóm,
+        xử lý tình huống và sử dụng tin học văn phòng.
+        Tôi mong muốn được tham gia môi trường làm việc chuyên nghiệp để
+        vận dụng những kiến thức đã học vào thực tế, không ngừng học hỏi,
+        tích lũy kinh nghiệm và phát triển các kỹ năng chuyên môn.
+        Mục tiêu của tôi là trở thành một nhân viên có tinh thần trách nhiệm,
+        chủ động, luôn hoàn thành tốt công việc được giao và từng bước
+        phát triển sự nghiệp lâu dài trong lĩnh vực ngân hàng.
         </div>
-
-        <div class="cv-position">
-            SINH VIÊN NĂM 3 NGÀNH TÀI CHÍNH NGÂN HÀNG
-        </div>
-
-        <div class="contact-grid">
-
-            <div class="contact-item">
-                <span class="contact-label">Ngày sinh:</span>
-                05/07/2005
-            </div>
-
-            <div class="contact-item">
-                <span class="contact-label">Giới tính:</span>
-                Nam
-            </div>
-
-            <div class="contact-item">
-                <span class="contact-label">Số điện thoại:</span>
-                0909116235
-            </div>
-
-            <div class="contact-item">
-                <span class="contact-label">Email:</span>
-                phuhung5705@gmail.com
-            </div>
-
-            <div class="contact-item">
-                <span class="contact-label">Website:</span>
-                Facebook Profile
-            </div>
-
-            <div class="contact-item">
-                <span class="contact-label">Địa chỉ:</span>
-                80/21 Tô Vĩnh Diện, Khu phố Tân Hòa,
-                Phường Đông Hòa, Thành phố Hồ Chí Minh
-            </div>
-
-        </div>
-
-    </div>
-""", unsafe_allow_html=True)
+        """,
+        unsafe_allow_html=True
+    )
 
 
 # =========================================================
-# BODY - CHIA 2 CỘT
+# PHẦN 2: THÔNG TIN CÁ NHÂN - HỌC VẤN - CHỨNG CHỈ
 # =========================================================
 
-st.markdown("""
-<div class="cv-body">
+col1, col2, col3 = st.columns([1, 1.15, 1.1], gap="large")
 
-    <!-- ================= CỘT TRÁI ================= -->
 
-    <div class="left-column">
+# ---------------------------------------------------------
+# THÔNG TIN CÁ NHÂN
+# ---------------------------------------------------------
 
-        <!-- HỌC VẤN -->
+with col1:
 
-        <div class="section">
+    st.markdown(
+        '<div class="section-title">THÔNG TIN CÁ NHÂN</div>',
+        unsafe_allow_html=True
+    )
 
-            <div class="section-title">
-                Học vấn
-            </div>
-
-            <div class="timeline-item">
-
-                <div class="date">
-                    19/2023 - nay
-                </div>
-
-                <div class="organization">
-                    Trường Đại học Nguyễn Tất Thành
-                </div>
-
-                <div class="position">
-                    Chuyên ngành Tài chính ngân hàng
-                </div>
-
-                <div class="detail">
-
-                    <b>• Xếp loại:</b> Khá
-                    <br>
-
-                    <b>• Chứng chỉ:</b>
-                    Kỹ năng Hành chính văn phòng,
-                    Kỹ năng làm chủ công việc
-
-                </div>
-
-            </div>
-
+    st.markdown(
+        """
+        <div class="info-row">
+            <span class="icon">●</span>
+            04/04/2005
         </div>
 
-
-        <!-- CHỨNG CHỈ -->
-
-        <div class="section">
-
-            <div class="section-title">
-                Chứng chỉ
-            </div>
-
-            <div class="certificate">
-
-                <div class="certificate-year">
-                    2025
-                </div>
-
-                <div class="certificate-name">
-                    KỸ NĂNG HÀNH CHÍNH VĂN PHÒNG
-                </div>
-
-            </div>
-
-            <div class="certificate">
-
-                <div class="certificate-year">
-                    2025
-                </div>
-
-                <div class="certificate-name">
-                    KỸ NĂNG LÀM CHỦ CÔNG VIỆC
-                </div>
-
-            </div>
-
+        <div class="info-row">
+            <span class="icon">✉</span>
+            trandieulinh34@gmail.com
         </div>
 
-
-        <!-- KỸ NĂNG -->
-
-        <div class="section">
-
-            <div class="section-title">
-                Kỹ năng
-            </div>
-
-
-            <div class="skill">
-
-                <div class="skill-name">
-                    Soạn thảo văn bản
-                </div>
-
-                <div class="skill-description">
-                    Kỹ năng soạn thảo văn bản hành chính và học thuật.
-                    Thành thạo Microsoft Word, trình bày văn bản chuyên nghiệp.
-                    Kỹ năng viết và chỉnh sửa báo cáo.
-                </div>
-
-            </div>
-
-
-            <div class="skill">
-
-                <div class="skill-name">
-                    Kỹ năng bàn phím
-                </div>
-
-                <div class="skill-description">
-                    Kỹ năng bàn phím tốt, gõ nhanh và chính xác,
-                    sử dụng thành thạo phím tắt trong Word và Excel.
-                </div>
-
-            </div>
-
-
-            <div class="skill">
-
-                <div class="skill-name">
-                    Giải quyết vấn đề
-                </div>
-
-                <div class="skill-description">
-                    Phân tích tình huống, xác định nguyên nhân,
-                    đề xuất và lựa chọn giải pháp phù hợp.
-                </div>
-
-            </div>
-
-
-            <div class="skill">
-
-                <div class="skill-name">
-                    Quản lý thời gian
-                </div>
-
-                <div class="skill-description">
-                    Sắp xếp công việc theo mức độ ưu tiên,
-                    đảm bảo hoàn thành đúng hạn, cân bằng học tập và công việc.
-                </div>
-
-            </div>
-
+        <div class="info-row">
+            <span class="icon">☎</span>
+            0889905402
         </div>
 
+        <div class="info-row">
+            <span class="icon">📍</span>
+            98 Nguyễn Văn Săng
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
-        <!-- SỞ THÍCH -->
 
-        <div class="section">
+# ---------------------------------------------------------
+# HỌC VẤN
+# ---------------------------------------------------------
 
-            <div class="section-title">
-                Sở thích
-            </div>
+with col2:
 
-            <div class="hobby">
-                <span class="hobby-dot"></span>
-                Đọc sách
-            </div>
+    st.markdown(
+        '<div class="section-title">HỌC VẤN</div>',
+        unsafe_allow_html=True
+    )
 
-            <div class="hobby">
-                <span class="hobby-dot"></span>
-                Nghe podcast học tập
-            </div>
+    st.markdown(
+        """
+        <div class="content">
 
-            <div class="hobby">
-                <span class="hobby-dot"></span>
-                Tham gia hoạt động học thuật
-            </div>
-
-            <div class="hobby">
-                <span class="hobby-dot"></span>
-                Tự học kỹ năng mềm
-            </div>
-
+        <div class="bold">
+        Đại học Nguyễn Tất Thành
         </div>
 
-    </div>
+        Tài chính - Ngân hàng
 
+        <br>
 
-    <!-- ================= CỘT PHẢI ================= -->
+        2023 - 2027
 
-    <div class="right-column">
+        <br>
 
-        <!-- MỤC TIÊU -->
-
-        <div class="section">
-
-            <div class="section-title">
-                Mục tiêu nghề nghiệp
-            </div>
-
-            <div class="text">
-
-                Áp dụng kiến thức chuyên ngành
-                <b>Tài chính – Ngân hàng</b> cùng kỹ năng
-                <b>Word, Excel và phân tích dữ liệu</b>
-                để hỗ trợ hiệu quả các nghiệp vụ ngân hàng.
-
-                Không ngừng học hỏi quy trình nghiệp vụ,
-                nâng cao kỹ năng chuyên môn và hướng tới trở thành
-                nhân sự ngân hàng chuyên nghiệp,
-                có giá trị lâu dài cho tổ chức.
-
-            </div>
+        Chuyên ngành Tài chính ngân hàng
 
         </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 
-        <!-- HOẠT ĐỘNG -->
+# ---------------------------------------------------------
+# CHỨNG CHỈ
+# ---------------------------------------------------------
 
-        <div class="section">
+with col3:
 
-            <div class="section-title">
-                Hoạt động
-            </div>
+    st.markdown(
+        '<div class="section-title">CHỨNG CHỈ</div>',
+        unsafe_allow_html=True
+    )
 
+    st.markdown(
+        """
+        <div class="content">
 
-            <!-- Hoạt động 2024 -->
+        Tin học:
 
-            <div class="timeline-item">
+        <br>
 
-                <div class="date">
-                    11/05/2024 - 23/12/2024
-                </div>
-
-                <div class="organization">
-                    Trường Đại học Nguyễn Tất Thành
-                </div>
-
-                <div class="position">
-                    SINH VIÊN THAM GIA
-                </div>
-
-                <div class="detail">
-
-                    <ul>
-
-                        <li>
-                            Tham gia UNITOUR nhà lãnh đạo tương lai
-                            và giới thiệu cuộc thi ASEAN - CHINA - INDIA 2024.
-                        </li>
-
-                        <li>
-                            Tham gia Ngày hội tuyển dụng tháng 5 năm 2024.
-                        </li>
-
-                        <li>
-                            Tham gia Workshop Đầu tư chứng khoán
-                            "Bản lĩnh đầu tư & tự tin chiến thắng".
-                        </li>
-
-                        <li>
-                            Tham gia Chương trình Tìm hiểu tài nguyên
-                            giáo dục mở cho Tân SV khóa 2024.
-                        </li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-
-            <!-- Hoạt động 2025 -->
-
-            <div class="timeline-item">
-
-                <div class="date">
-                    09/08/2025 - 05/10/2025
-                </div>
-
-                <div class="organization">
-                    Trường Đại học Nguyễn Tất Thành
-                </div>
-
-                <div class="position">
-                    SINH VIÊN THAM GIA
-                </div>
-
-                <div class="detail">
-
-                    <ul>
-
-                        <li>
-                            Tham gia Hội thảo khoa học Quốc tế
-                            Toán học và Ứng dụng năm 2025.
-                        </li>
-
-                        <li>
-                            Tham gia Hoạt động phục vụ cộng đồng cấp Khoa 2025
-                            - Hành trình tuổi trẻ vì cộng đồng 2025 -
-                            Trung thu nghĩa tình 2025.
-                        </li>
-
-                    </ul>
-
-                </div>
-
-            </div>
+        Word, Excel, PDF
 
         </div>
-
-    </div>
-
-</div>
-
-
-<!-- FOOTER -->
-
-<div class="cv-footer">
-    CV - ĐẶNG PHÚ HƯNG
-</div>
-
-</div>
-""", unsafe_allow_html=True)
+        """,
+        unsafe_allow_html=True
+    )
 
 
 # =========================================================
-# NÚT TẢI / IN CV
+# =========================================================
+# KINH NGHIỆM LÀM VIỆC
 # =========================================================
 
-st.markdown("""
-<div style="
-    max-width:1100px;
-    margin:20px auto;
-    text-align:center;
-">
+st.markdown("## KINH NGHIỆM LÀM VIỆC")
+st.divider()
 
-<p style="
-    color:#666;
-    font-size:13px;
-">
-Bạn có thể sử dụng chức năng Print của trình duyệt
-để lưu CV thành PDF.
-</p>
+col_time, col_content = st.columns([1, 3])
 
-</div>
-""", unsafe_allow_html=True)
+with col_time:
+    st.markdown("🔴 **03/2025 - 04/2026**")
+
+with col_content:
+    st.markdown("### Doanh nghiệp tư nhân Thắt lưng giá tốt")
+    
+    st.markdown("**Nhân viên tư vấn và chăm sóc khách hàng**")
+    
+    st.markdown("""
+    - Liên hệ tệp **+1000 khách hàng tiềm năng** và tư vấn khách hàng sử dụng các sản phẩm.
+    
+    - Tiếp nhận và xử lý các yêu cầu của khách hàng về sản phẩm.
+    
+    - Chăm sóc khách hàng cũ, hỗ trợ giải đáp mọi thắc mắc của khách hàng đối với sản phẩm đang sử dụng.
+    """)
+    
+# =========================================================
+# PHẦN 4: KỸ NĂNG + NGƯỜI THAM KHẢO
+# =========================================================
+
+col1, col2 = st.columns([1, 1], gap="large")
+
+
+# ---------------------------------------------------------
+# KỸ NĂNG
+# ---------------------------------------------------------
+
+with col1:
+
+    st.markdown(
+        '<div class="section-title">KỸ NĂNG</div>',
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        """
+        <div class="skill-title">
+            Kỹ năng giao tiếp
+        </div>
+
+        <div class="skill-content">
+            Giao tiếp và giải đáp thắc mắc của khách hàng
+        </div>
+
+
+        <div class="skill-title">
+            Kỹ năng làm việc nhóm
+        </div>
+
+        <div class="skill-content">
+            Control được công việc trong nhóm, phân chia cho các
+            thành viên trong nhóm hoặc có trách nhiệm với nhiệm vụ
+            được giao
+        </div>
+
+
+        <div class="skill-title">
+            Kỹ năng quản lý thời gian
+        </div>
+
+        <div class="skill-content">
+            Phân bổ thời gian hợp lý cho từng công việc
+        </div>
+
+
+        <div class="skill-title">
+            Kỹ năng tin học
+        </div>
+
+        <div class="skill-content">
+            Soạn thảo văn bảng, làm sile
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+# ---------------------------------------------------------
+# NGƯỜI THAM KHẢO
+# ---------------------------------------------------------
+
+with col2:
+
+    st.markdown(
+        '<div class="section-title">NGƯỜI THAM KHẢO</div>',
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        """
+        <div class="content">
+
+        <div class="bold">
+            Cao Thị Mỹ Huê
+        </div>
+
+        Giám đốc phòng kinh doanh (SM) - Ngân hàng TMCP
+        Quốc Tế Việt Nam (VIB)
+
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
