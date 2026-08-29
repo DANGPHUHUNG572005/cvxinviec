@@ -182,7 +182,7 @@ with col2:
     )
 
     st.markdown(
-        '<div class="job">Nhân viên tín dụng</div>',
+        '<div class="job">Người làm việc tự do</div>',
         unsafe_allow_html=True
     )
 
@@ -233,22 +233,22 @@ with col1:
         """
         <div class="info-row">
             <span class="icon">●</span>
-            04/04/2005
+            05/07/2005
         </div>
 
         <div class="info-row">
             <span class="icon">✉</span>
-            trandieulinh34@gmail.com
+            phuhung5705@gmail.com
         </div>
 
         <div class="info-row">
             <span class="icon">☎</span>
-            0889905402
+            0909116235
         </div>
 
         <div class="info-row">
             <span class="icon">📍</span>
-            98 Nguyễn Văn Săng
+            80/21 Tô Vĩnh Diện Khu phố Tân Hòa Phường Đông Hòa Thành phố Hồ Chí Minh 
         </div>
         """,
         unsafe_allow_html=True
@@ -309,7 +309,7 @@ with col3:
 
         <br>
 
-        Word, Excel, PDF
+        Word, Excel, PPT
 
         </div>
         """,
