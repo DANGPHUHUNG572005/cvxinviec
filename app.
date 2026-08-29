@@ -1,0 +1,318 @@
+import streamlit as st
+
+# =========================
+# CẤU HÌNH TRANG
+# =========================
+st.set_page_config(
+    page_title="CV - Đặng Phú Hưng",
+    page_icon="📄",
+    layout="wide"
+)
+
+# =========================
+# CSS
+# =========================
+st.markdown("""
+<style>
+    .main {
+        background-color: #f5f6f8;
+    }
+
+    .cv-container {
+        max-width: 1050px;
+        margin: auto;
+        background: white;
+        padding: 45px 55px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    .name {
+        font-size: 38px;
+        font-weight: 700;
+        color: #172b4d;
+        margin-bottom: 5px;
+    }
+
+    .position {
+        font-size: 18px;
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 21px;
+        font-weight: 700;
+        color: #172b4d;
+        border-bottom: 2px solid #172b4d;
+        padding-bottom: 7px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+
+    .info {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .job-title {
+        font-weight: 700;
+        font-size: 16px;
+        color: #222;
+    }
+
+    .date {
+        color: #666;
+        font-weight: 600;
+    }
+
+    .skill-title {
+        font-weight: 700;
+        color: #172b4d;
+        margin-top: 12px;
+    }
+
+    .activity {
+        margin-bottom: 10px;
+        line-height: 1.6;
+    }
+
+    .footer {
+        text-align: center;
+        color: #888;
+        margin-top: 35px;
+        font-size: 13px;
+    }
+
+    @media print {
+        .stApp {
+            background: white;
+        }
+    }
+</style>
+""", unsafe_allow_html=True)
+
+
+# =========================
+# HEADER
+# =========================
+st.markdown('<div class="cv-container">', unsafe_allow_html=True)
+
+col1, col2 = st.columns([2.3, 1])
+
+with col1:
+    st.markdown(
+        '<div class="name">Đặng Phú Hưng</div>',
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        '<div class="position">SINH VIÊN NĂM 3 NGÀNH TÀI CHÍNH NGÂN HÀNG</div>',
+        unsafe_allow_html=True
+    )
+
+    st.markdown("""
+    <div class="info">
+        <b>Ngày sinh:</b> 05/07/2005<br>
+        <b>Giới tính:</b> Nam<br>
+        <b>Số điện thoại:</b> 0909116235<br>
+        <b>Email:</b> phuhung5705@gmail.com<br>
+        <b>Website:</b> Facebook<br>
+        <b>Địa chỉ:</b> 80/21 Tô Vĩnh Diện, Khu phố Tân Hòa,
+        Phường Đông Hòa, Thành phố Hồ Chí Minh
+    </div>
+    """, unsafe_allow_html=True)
+
+with col2:
+    st.info("📄 **CURRICULUM VITAE**")
+
+
+# =========================
+# MỤC TIÊU NGHỀ NGHIỆP
+# =========================
+st.markdown(
+    '<div class="section-title">MỤC TIÊU NGHỀ NGHIỆP</div>',
+    unsafe_allow_html=True
+)
+
+st.write(
+    """
+    Áp dụng kiến thức chuyên ngành Tài chính – Ngân hàng cùng kỹ năng
+    Word, Excel và phân tích dữ liệu để hỗ trợ hiệu quả các nghiệp vụ
+    ngân hàng. Không ngừng học hỏi quy trình nghiệp vụ, nâng cao kỹ năng
+    chuyên môn và hướng tới trở thành nhân sự ngân hàng chuyên nghiệp,
+    có giá trị lâu dài cho tổ chức.
+    """
+)
+
+
+# =========================
+# HỌC VẤN
+# =========================
+st.markdown(
+    '<div class="section-title">HỌC VẤN</div>',
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <div class="date">09/2023 - nay</div>
+    <div class="job-title">TRƯỜNG ĐẠI HỌC NGUYỄN TẤT THÀNH</div>
+    <div class="info">
+        <b>Chuyên ngành:</b> Tài chính ngân hàng<br>
+        <b>Xếp loại:</b> Khá<br>
+        <b>Chứng chỉ:</b> Kỹ năng Hành chính văn phòng,
+        Kỹ năng làm chủ công việc
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
+# =========================
+# CHỨNG CHỈ
+# =========================
+st.markdown(
+    '<div class="section-title">CHỨNG CHỈ</div>',
+    unsafe_allow_html=True
+)
+
+cert1, cert2 = st.columns(2)
+
+with cert1:
+    st.markdown("### 2025")
+    st.write("**KỸ NĂNG HÀNH CHÍNH VĂN PHÒNG**")
+
+with cert2:
+    st.markdown("### 2025")
+    st.write("**KỸ NĂNG LÀM CHỦ CÔNG VIỆC**")
+
+
+# =========================
+# KỸ NĂNG
+# =========================
+st.markdown(
+    '<div class="section-title">KỸ NĂNG</div>',
+    unsafe_allow_html=True
+)
+
+skills = [
+    (
+        "SOẠN THẢO VĂN BẢN",
+        "Kỹ năng soạn thảo văn bản hành chính và học thuật. "
+        "Thành thạo Microsoft Word, trình bày văn bản chuyên nghiệp. "
+        "Kỹ năng viết và chỉnh sửa báo cáo."
+    ),
+    (
+        "KỸ NĂNG BÀN PHÍM",
+        "Kỹ năng bàn phím tốt, gõ nhanh và chính xác, "
+        "sử dụng thành thạo phím tắt trong Word và Excel."
+    ),
+    (
+        "GIẢI QUYẾT VẤN ĐỀ",
+        "Phân tích tình huống, xác định nguyên nhân, "
+        "đề xuất và lựa chọn giải pháp phù hợp."
+    ),
+    (
+        "QUẢN LÍ THỜI GIAN",
+        "Sắp xếp công việc theo mức độ ưu tiên, đảm bảo hoàn thành "
+        "đúng hạn, cân bằng học tập và công việc."
+    )
+]
+
+for title, content in skills:
+    st.markdown(
+        f"""
+        <div class="skill-title">{title}</div>
+        <div>{content}</div>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+# =========================
+# SỞ THÍCH
+# =========================
+st.markdown(
+    '<div class="section-title">SỞ THÍCH</div>',
+    unsafe_allow_html=True
+)
+
+hobby_cols = st.columns(4)
+
+hobbies = [
+    "📚 Đọc sách",
+    "🎧 Nghe podcast học tập",
+    "🎓 Tham gia hoạt động học thuật",
+    "💡 Tự học kỹ năng mềm"
+]
+
+for col, hobby in zip(hobby_cols, hobbies):
+    with col:
+        st.write(hobby)
+
+
+# =========================
+# HOẠT ĐỘNG 2024
+# =========================
+st.markdown(
+    '<div class="section-title">HOẠT ĐỘNG</div>',
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <div class="date">11/05/2024 - 23/12/2024</div>
+    <div class="job-title">TRƯỜNG ĐẠI HỌC NGUYỄN TẤT THÀNH</div>
+    <div><b>SINH VIÊN THAM GIA</b></div>
+    """,
+    unsafe_allow_html=True
+)
+
+activities_2024 = [
+    "Tham gia UNITOUR Nhà lãnh đạo tương lai và giới thiệu cuộc thi ASEAN - CHINA - INDIA 2024",
+    "Tham gia Ngày hội tuyển dụng tháng 5 năm 2024",
+    "Tham gia Workshop Đầu tư chứng khoán Bản lĩnh đầu tư & tự tin chiến thắng",
+    "Tham gia Chương trình Tìm hiểu tài nguyên giáo dục mở cho Tân SV khóa 2024"
+]
+
+for activity in activities_2024:
+    st.markdown(
+        f'<div class="activity">• {activity}</div>',
+        unsafe_allow_html=True
+    )
+
+
+# =========================
+# HOẠT ĐỘNG 2025
+# =========================
+st.markdown(
+    """
+    <div class="date">09/08/2025 - 05/10/2025</div>
+    <div class="job-title">TRƯỜNG ĐẠI HỌC NGUYỄN TẤT THÀNH</div>
+    <div><b>SINH VIÊN THAM GIA</b></div>
+    """,
+    unsafe_allow_html=True
+)
+
+activities_2025 = [
+    "Tham gia Hội thảo khoa học Quốc tế Toán học và Ứng dụng năm 2025",
+    "Tham gia Hoạt động phục vụ cộng đồng cấp Khoa 2025 - Hành trình tuổi trẻ vì cộng đồng 2025 - Trung thu nghĩa tình 2025"
+]
+
+for activity in activities_2025:
+    st.markdown(
+        f'<div class="activity">• {activity}</div>',
+        unsafe_allow_html=True
+    )
+
+
+# =========================
+# FOOTER
+# =========================
+st.markdown(
+    '<div class="footer">© CV Đặng Phú Hưng</div>',
+    unsafe_allow_html=True
+)
+
+st.markdown('</div>', unsafe_allow_html=True)
